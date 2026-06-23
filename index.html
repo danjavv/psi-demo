@@ -426,6 +426,9 @@
   .coach-highlight { position:relative; z-index:301 !important; box-shadow:0 0 0 3px #fff, 0 0 0 6px var(--ink), var(--shadow-xl) !important; border-radius:12px; }
   #coach-card { position:fixed; z-index:302; width:320px; background:var(--surface); border-radius:var(--r-lg); box-shadow:var(--shadow-xl);
     padding:19px 20px; opacity:0; pointer-events:none; transition:opacity .2s; border:1px solid var(--line); }
+  @media (max-width:600px) {
+    #coach-card { width:calc(100vw - 32px); max-width:340px; }
+  }
   #coach-card.show { opacity:1; pointer-events:all; }
   #coach-card .cc-step { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
     color:#fff; background:var(--ink); padding:3px 9px; border-radius:6px; margin-bottom:11px; }
@@ -1685,6 +1688,10 @@ function showCoach(key){
 }
 function positionCoach(target){
   const card=$('coach-card');
+  if(window.innerWidth<=600){
+    card.style.left='50%'; card.style.top='50%'; card.style.transform='translate(-50%,-50%)';
+    return;
+  }
   card.style.transform='none';
   const r=target.getBoundingClientRect();
   const cw=card.offsetWidth||320, ch=card.offsetHeight||170, gap=16;
