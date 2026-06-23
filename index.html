@@ -570,6 +570,15 @@
     .intro-viz { flex-direction:column; }
     .uc-grid { grid-template-columns:1fr; }
   }
+  @media (max-width:600px) {
+    .topbar { height:auto; flex-wrap:wrap; padding:10px 14px; gap:8px; }
+    .topbar-right { width:100%; margin-left:0; flex-wrap:wrap; gap:6px; }
+    .tips-toggle > span:first-child { display:none; }
+    .pl-txt { display:none; }
+    .pill-btn { padding:7px 9px; }
+    .pill-btn.cta { padding:7px 13px; }
+    .stage { padding:16px 14px 60px; }
+  }
 </style>
 </head>
 <body>
@@ -583,9 +592,9 @@
   </div>
   <div class="topbar-right">
     <div class="tips-toggle on" id="tips-toggle" onclick="toggleTips()"><span>Guided tips</span><span class="switch"></span></div>
-    <button class="pill-btn" id="gloss-toggle" onclick="toggleGloss()"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Glossary</button>
-    <button class="pill-btn" onclick="openExplainer()"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg> What is PSI?</button>
-    <button class="pill-btn" onclick="restartDemo()"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"/><path d="M21 12A9 9 0 1 1 6 5.3L3 8"/></svg> Restart</button>
+    <button class="pill-btn" id="gloss-toggle" onclick="toggleGloss()"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="pl-txt"> Glossary</span></button>
+    <button class="pill-btn" onclick="openExplainer()"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span class="pl-txt"> What is PSI?</span></button>
+    <button class="pill-btn" onclick="restartDemo()"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"/><path d="M21 12A9 9 0 1 1 6 5.3L3 8"/></svg><span class="pl-txt"> Restart</span></button>
     <a class="pill-btn cta" href="https://www.silencelaboratories.com" target="_blank" rel="noopener">Book a demo <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
   </div>
 </header>
